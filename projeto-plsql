@@ -105,11 +105,11 @@ CREATE TABLE PRECOS (
 /* ADICIONANDO OS DADOS                                         */
 /*==============================================================*/
 REM INSERTING into CLIENTES
-INSERT INTO CLIENTES (CLIENTE, NOME, ENDERECO, FONE, CIDADE) VALUES (7, 'AntÙnio Silva', 'Rua das Flores, 123', '(11) 9999-1234', 'S„o Paulo');
+INSERT INTO CLIENTES (CLIENTE, NOME, ENDERECO, FONE, CIDADE) VALUES (7, 'Ant√¥nio Silva', 'Rua das Flores, 123', '(11) 9999-1234', 'S√£o Paulo');
 INSERT INTO CLIENTES (CLIENTE, NOME, ENDERECO, FONE, CIDADE) VALUES (3, 'Maria Santos', 'Av. das Palmeiras, 456', '(21) 9876-5678', 'Rio de Janeiro');
-INSERT INTO CLIENTES (CLIENTE, NOME, ENDERECO, FONE, CIDADE) VALUES (6, 'Jo„o Oliveira', 'Travessa das Pedras, 789', '(51) 5555-7890', 'Porto Alegre');
-INSERT INTO CLIENTES (CLIENTE, NOME, ENDERECO, FONE, CIDADE) VALUES (4, 'Ana Souza', 'R. dos IpÍs, 234', '(62) 1234-5678', 'Goi‚nia');
-INSERT INTO CLIENTES (CLIENTE, NOME, ENDERECO, FONE, CIDADE) VALUES (5, 'Pedro Fernandes', 'Av. dos GirassÛis, 567', '(85) 9876-5432', 'Fort');
+INSERT INTO CLIENTES (CLIENTE, NOME, ENDERECO, FONE, CIDADE) VALUES (6, 'Jo√£o Oliveira', 'Travessa das Pedras, 789', '(51) 5555-7890', 'Porto Alegre');
+INSERT INTO CLIENTES (CLIENTE, NOME, ENDERECO, FONE, CIDADE) VALUES (4, 'Ana Souza', 'R. dos Ip√™s, 234', '(62) 1234-5678', 'Goi√¢nia');
+INSERT INTO CLIENTES (CLIENTE, NOME, ENDERECO, FONE, CIDADE) VALUES (5, 'Pedro Fernandes', 'Av. dos Girass√≥is, 567', '(85) 9876-5432', 'Fort');
 insert into CLIENTES (cliente, nome, endereco, fone, cidade) values (2, 'Nanon', '9th Floor', '404-507-3622', 'Pingshui');
 insert into CLIENTES (cliente, nome, endereco, fone, cidade) values (9, 'Iain', 'Suite 38', '532-230-4195', 'Rejoyoso');
 insert into CLIENTES (cliente, nome, endereco, fone, cidade) values (1, 'Linnet', 'Suite 78', '595-803-6808', 'Kuala Tuha');
@@ -119,9 +119,9 @@ insert into CLIENTES (cliente, nome, endereco, fone, cidade) values (10, 'Dorote
 REM INSERTING into ATORES
 INSERT INTO ATORES (ATOR, NOME) VALUES (1, 'Pedro Silva');
 INSERT INTO ATORES (ATOR, NOME) VALUES (2, 'Mara Souza');
-INSERT INTO ATORES (ATOR, NOME) VALUES (3, 'AntÙnio Rodrigues');
+INSERT INTO ATORES (ATOR, NOME) VALUES (3, 'Ant√¥nio Rodrigues');
 INSERT INTO ATORES (ATOR, NOME) VALUES (4, 'Maria Fernandes');
-INSERT INTO ATORES (ATOR, NOME) VALUES (5, 'Jo„o Oliveira');
+INSERT INTO ATORES (ATOR, NOME) VALUES (5, 'Jo√£o Oliveira');
 insert into ATORES (ator, nome) values (6, 'Fiann Dryburgh');
 insert into ATORES (ator, nome) values (7, 'Hyman Coffin');
 insert into ATORES (ator, nome) values (8, 'Andria Macon');
@@ -145,10 +145,10 @@ INSERT INTO FILMES (FILME, NOME, GENERO, PRECO, DT_COMPRA, HRS_DEVOLUCAO) VALUES
 INSERT INTO FILMES (FILME, NOME, GENERO, PRECO, DT_COMPRA, HRS_DEVOLUCAO) VALUES (2, 'Noite de Terror', 2, 10, '05/06/2022', 24);
 INSERT INTO FILMES (FILME, NOME, GENERO, PRECO, DT_COMPRA, HRS_DEVOLUCAO) VALUES (3, 'O Tesouro Perdido', 3, 9, '20/03/2022', 72);
 INSERT INTO FILMES (FILME, NOME, GENERO, PRECO, DT_COMPRA, HRS_DEVOLUCAO) VALUES (4, 'Amor em Paris', 4, 2, '10/08/2022', 48);
-INSERT INTO FILMES (FILME, NOME, GENERO, PRECO, DT_COMPRA, HRS_DEVOLUCAO) VALUES (5, 'Desbravadores do EspaÁo', 5, 4, '30/09/2022', 72);
+INSERT INTO FILMES (FILME, NOME, GENERO, PRECO, DT_COMPRA, HRS_DEVOLUCAO) VALUES (5, 'Desbravadores do Espa√ßo', 5, 4, '30/09/2022', 72);
 insert into FILMES (FILME, NOME, GENERO, PRECO, DT_COMPRA, HRS_DEVOLUCAO) values (6, 'Late Autumn (Man-choo)', 6, 3, '7/3/2023', 21);
 insert into FILMES (FILME, NOME, GENERO, PRECO, DT_COMPRA, HRS_DEVOLUCAO) values (7, 'City Zero', 7, 6, '21/4/2022', 8);
-insert into FILMES (FILME, NOME, GENERO, PRECO, DT_COMPRA, HRS_DEVOLUCAO) values (8, 'Crows Zero (KurÙzu zero)', 8, 7, '1/1/2023', 8);
+insert into FILMES (FILME, NOME, GENERO, PRECO, DT_COMPRA, HRS_DEVOLUCAO) values (8, 'Crows Zero (Kur√¥zu zero)', 8, 7, '1/1/2023', 8);
 insert into FILMES (FILME, NOME, GENERO, PRECO, DT_COMPRA, HRS_DEVOLUCAO) values (9, 'Venus Wars (Venus Senki)', 9, 4, '22/10/2022', 11);
 insert into FILMES (FILME, NOME, GENERO, PRECO, DT_COMPRA, HRS_DEVOLUCAO) values (10, 'American Gothic', 10, 1, '1/1/2023', 14);
 
@@ -177,10 +177,10 @@ insert into PRECOS (PRECO, CATEGORIA, VALOR) values (9, 9, 9.89);
 insert into PRECOS (PRECO, CATEGORIA, VALOR) values (10, 5, 32.39);
 
 REM INSERTING into GENEROS
-INSERT INTO GENEROS (GENERO, DESCRICAO) VALUES (1, 'AÁ„o');
-INSERT INTO GENEROS (GENERO, DESCRICAO) VALUES (2, 'ComÈdia');
+INSERT INTO GENEROS (GENERO, DESCRICAO) VALUES (1, 'A√ß√£o');
+INSERT INTO GENEROS (GENERO, DESCRICAO) VALUES (2, 'Com√©dia');
 INSERT INTO GENEROS (GENERO, DESCRICAO) VALUES (3, 'Drama');
-INSERT INTO GENEROS (GENERO, DESCRICAO) VALUES (4, 'FicÁ„o CientÌfica');
+INSERT INTO GENEROS (GENERO, DESCRICAO) VALUES (4, 'Fic√ß√£o Cient√≠fica');
 INSERT INTO GENEROS (GENERO, DESCRICAO) VALUES (5, 'Romance');
 insert into GENEROS (GENERO, DESCRICAO) values (6, 'Drama');
 insert into GENEROS (GENERO, DESCRICAO) values (7, 'Sci-Fi');
@@ -226,7 +226,7 @@ INSERT INTO LOCACOES (LOCACAO, DT_LOCACAO, CLIENTE, DT_DEVOLUCAO) VALUES (14, '2
 INSERT INTO LOCACOES (LOCACAO, DT_LOCACAO, CLIENTE, DT_DEVOLUCAO) VALUES (15, '28/03/2006', 9, '30/03/2006');
 
 /*==============================================================*/
-/* ALTERANDO AS TABELAS ADICIONANDO AS RESTRI«’ES              */
+/* ALTERANDO AS TABELAS ADICIONANDO AS RESTRI√á√ïES              */
 /*==============================================================*/
 ALTER TABLE PRECOS
 ADD CONSTRAINT FK_CATEGORIA_PRECOS  FOREIGN KEY (CATEGORIA)
@@ -289,12 +289,12 @@ alter table FILMES_ATOR
 drop constraint FK_ATOR_FILMES_ATOR;
 */
 
---EXERCÕCIO 1 
+--EXERC√çCIO 1 
 /*
-Criar uma procedure que quando for informado o cÛdigo do cliente ela retorne o valor pago por ele pelas locaÁıes realizadas no 
-perÌodo de janeiro de 2006 a dezembro de 2006. Somente devem ser retornadas informaÁıes para os clientes cadastrados, caso o 
-cliente n„o exista na base de dados deve ser informado ao usu·rio, tambÈm deve ser informado ao usu·rio caso o perÌodo informado 
-n„o exista locaÁıes de fitas por parte do cliente.
+Criar uma procedure que quando for informado o c√≥digo do cliente ela retorne o valor pago por ele pelas loca√ß√µes realizadas no 
+per√≠odo de janeiro de 2006 a dezembro de 2006. Somente devem ser retornadas informa√ß√µes para os clientes cadastrados, caso o 
+cliente n√£o exista na base de dados deve ser informado ao usu√°rio, tamb√©m deve ser informado ao usu√°rio caso o per√≠odo informado 
+n√£o exista loca√ß√µes de fitas por parte do cliente.
 */
 create or replace NONEDITIONABLE PROCEDURE OBTENHA_VALOR_PAGO (
     p_codigo_cliente IN NUMBER,
@@ -312,11 +312,11 @@ BEGIN
     WHERE CLIENTE = p_codigo_cliente;
 
     IF v_cliente_existe = 0 THEN
-        DBMS_OUTPUT.PUT_LINE('Cliente n„o encontrado.');
+        DBMS_OUTPUT.PUT_LINE('Cliente n√£o encontrado.');
         RETURN;
     END IF;
 
-    -- Verificar se existem locaÁıes no perÌodo informado
+    -- Verificar se existem loca√ß√µes no per√≠odo informado
     SELECT COUNT(*) INTO v_periodo_valido
     FROM LOCACOES
     WHERE CLIENTE = p_codigo_cliente
@@ -324,11 +324,11 @@ BEGIN
     AND DT_LOCACAO <= v_data_fim;
 
     IF v_periodo_valido = 0 THEN
-        DBMS_OUTPUT.PUT_LINE('N„o h· locaÁıes para o cliente no perÌodo informado.');
+        DBMS_OUTPUT.PUT_LINE('N√£o h√° loca√ß√µes para o cliente no per√≠odo informado.');
         RETURN;
     END IF;
 
-    -- Calcular o valor total pago pelo cliente no perÌodo
+    -- Calcular o valor total pago pelo cliente no per√≠odo
     SELECT SUM(VALOR) INTO p_valor_pago
     FROM LOCACOES l
     JOIN ITENS_LOCACAO il ON l.LOCACAO = il.LOCACAO
@@ -346,7 +346,7 @@ END;
 --EXERCICIO 2
 /*
 Criar uma procedure que retorne o valor total de fitas compradas em um determinado intervalo de data. Caso o intervalo 
-de data n„o exista nenhuma compra, deve ser retornada a mensagem ìNeste perÌodo n„o foram adquiridas novas fitas para a locadoraî.
+de data n√£o exista nenhuma compra, deve ser retornada a mensagem ¬ìNeste per√≠odo n√£o foram adquiridas novas fitas para a locadora¬î.
 */
 create or replace NONEDITIONABLE PROCEDURE OBTENHA_VALOR_TOTAL_COMPRAS (
     p_data_inicio IN DATE,
@@ -362,9 +362,9 @@ BEGIN
     AND DT_COMPRA <= p_data_fim;
 
     IF p_valor_total = 0 THEN
-        DBMS_OUTPUT.PUT_LINE('Neste perÌodo n„o foram adquiridas novas fitas para a locadora.');
+        DBMS_OUTPUT.PUT_LINE('Neste per√≠odo n√£o foram adquiridas novas fitas para a locadora.');
     ELSE
-        DBMS_OUTPUT.PUT_LINE('Valor total de fitas compradas no perÌodo: ' || p_valor_total);
+        DBMS_OUTPUT.PUT_LINE('Valor total de fitas compradas no per√≠odo: ' || p_valor_total);
     END IF;
 EXCEPTION
     WHEN OTHERS THEN
@@ -373,7 +373,7 @@ END;
 
 --EXERCICIO 3
 /*
-Criar uma procedure que permita localizar o cliente que mais efetuou locaÁıes no ano de 2007, bem como o valor total pago por estas locaÁıes.
+Criar uma procedure que permita localizar o cliente que mais efetuou loca√ß√µes no ano de 2007, bem como o valor total pago por estas loca√ß√µes.
 */
 create or replace NONEDITIONABLE PROCEDURE LOCALIZA_CLIENTE_MAIS_LOCACOES_2007 (
     p_codigo_cliente OUT NUMBER,
@@ -382,7 +382,7 @@ create or replace NONEDITIONABLE PROCEDURE LOCALIZA_CLIENTE_MAIS_LOCACOES_2007 (
 )
 IS
 BEGIN
-    -- Localizar o cliente que mais efetuou locaÁıes em 2007
+    -- Localizar o cliente que mais efetuou loca√ß√µes em 2007
     SELECT l.CLIENTE, c.NOME, COUNT(*) AS TOTAL_LOCACOES
     INTO p_codigo_cliente, p_nome_cliente, p_valor_total_locacoes
     FROM LOCACOES l
@@ -399,9 +399,9 @@ BEGIN
         )
     );
 
-    -- Verificar se h· resultados
+    -- Verificar se h√° resultados
     IF p_codigo_cliente IS NULL THEN
-        DBMS_OUTPUT.PUT_LINE('Nenhum cliente encontrado que efetuou locaÁıes em 2007.');
+        DBMS_OUTPUT.PUT_LINE('Nenhum cliente encontrado que efetuou loca√ß√µes em 2007.');
         RETURN;
     END IF;
 
@@ -414,16 +414,16 @@ BEGIN
     AND EXTRACT(YEAR FROM l.DT_LOCACAO) = 2007;
 
     -- Exibir o cliente e o valor total pago por ele
-    DBMS_OUTPUT.PUT_LINE('Cliente com mais locaÁıes em 2007: ' || p_nome_cliente);
-    DBMS_OUTPUT.PUT_LINE('Valor total pago por locaÁıes: ' || p_valor_total_locacoes);
+    DBMS_OUTPUT.PUT_LINE('Cliente com mais loca√ß√µes em 2007: ' || p_nome_cliente);
+    DBMS_OUTPUT.PUT_LINE('Valor total pago por loca√ß√µes: ' || p_valor_total_locacoes);
 EXCEPTION
     WHEN OTHERS THEN
         DBMS_OUTPUT.PUT_LINE('Erro ao processar a consulta: ' || SQLERRM);
 END;
 --EXERCICIO 4
 /*
-Criar uma procedure que receba os dados de um ATOR, de um FILME e efetue a inclus„o do mesmo no banco de dados. 
-TambÈm deve ser relacionado o ator ao filme na tabela FILMES_ATOR.
+Criar uma procedure que receba os dados de um ATOR, de um FILME e efetue a inclus√£o do mesmo no banco de dados. 
+Tamb√©m deve ser relacionado o ator ao filme na tabela FILMES_ATOR.
 */
 create or replace NONEDITIONABLE PROCEDURE INSERIR_ATOR_FILME (
     nome_ator    IN ATORES.NOME%TYPE,
@@ -471,14 +471,14 @@ END;
 
 --EXERCICIO 5
 /*
-O Gerente Geral empresa em que vocÍ trabalha solicitou ao DBA um relatÛrio dos vendedores que tenham comiss„o acima de R$1.000,00 independente 
-do percentual de comiss„o que cada vendedor recebe. Esta solicitaÁ„o foi necess·ria visto que o sistema existente atualmente n„o contempla este 
-tipo de relatÛrio gerencial, e para complicar ainda mais, o gerente disse que est· indo em 10 minutos para uma reuni„o com o Diretor Presidente 
-da empresa e o resultado bem sucedido da reuni„o vai depender de vocÍ. ApÛs o susto, vocÍ decide implementar uma SP para resolver o problema. Dentro 
-das possibilidades existentes para a criaÁ„o da SP, implemente a soluÁ„o do problema apresentado utilizando uma tabela de vendedores na qual deve 
-conter os seguintes atributos: VENDEDORES = {vendedor, nome, comiss„o, total_vendas}. Alimente a tabela com as informaÁıes que julgar necess·rio. 
-O relatÛrio gerado dever· possuir o nome do vendedor, o total de suas vendas, o percentual de sua comiss„o, o valor que ele ir· receber de comiss„o, 
-o total geral das vendas de todos os vendedores, e o percentual de sua comiss„o relativa ao total geral das vendas.
+O Gerente Geral empresa em que voc√™ trabalha solicitou ao DBA um relat√≥rio dos vendedores que tenham comiss√£o acima de R$1.000,00 independente 
+do percentual de comiss√£o que cada vendedor recebe. Esta solicita√ß√£o foi necess√°ria visto que o sistema existente atualmente n√£o contempla este 
+tipo de relat√≥rio gerencial, e para complicar ainda mais, o gerente disse que est√° indo em 10 minutos para uma reuni√£o com o Diretor Presidente 
+da empresa e o resultado bem sucedido da reuni√£o vai depender de voc√™. Ap√≥s o susto, voc√™ decide implementar uma SP para resolver o problema. Dentro 
+das possibilidades existentes para a cria√ß√£o da SP, implemente a solu√ß√£o do problema apresentado utilizando uma tabela de vendedores na qual deve 
+conter os seguintes atributos: VENDEDORES = {vendedor, nome, comiss√£o, total_vendas}. Alimente a tabela com as informa√ß√µes que julgar necess√°rio. 
+O relat√≥rio gerado dever√° possuir o nome do vendedor, o total de suas vendas, o percentual de sua comiss√£o, o valor que ele ir√° receber de comiss√£o, 
+o total geral das vendas de todos os vendedores, e o percentual de sua comiss√£o relativa ao total geral das vendas.
 */
 DROP TABLE VENDEDORES cascade constraints;
 
@@ -490,7 +490,7 @@ CREATE TABLE VENDEDORES (
 );
 
 INSERT INTO VENDEDORES (vendedor, nome, comissao, total_vendas)
-VALUES (1, 'Jo„o', 0.25, 2000.56);
+VALUES (1, 'Jo√£o', 0.25, 2000.56);
 
 INSERT INTO VENDEDORES (vendedor, nome, comissao, total_vendas)
 VALUES (2, 'Maria', 0.25, 3500.67);
@@ -513,27 +513,27 @@ BEGIN
     -- Calcular o total geral de vendas de todos os vendedores
     SELECT SUM(total_vendas) INTO v_total_geral_vendas FROM VENDEDORES;
 
-    -- Gerar o relatÛrio dos vendedores com comiss„o acima de R$1.000,00
+    -- Gerar o relat√≥rio dos vendedores com comiss√£o acima de R$1.000,00
     FOR vendedor IN (SELECT nome, total_vendas, comissao, (comissao * total_vendas) AS valor_comissao
                          FROM VENDEDORES
                          WHERE comissao * total_vendas > 1000)
     LOOP
-        -- Calcular o valor da comiss„o do vendedor
+        -- Calcular o valor da comiss√£o do vendedor
         --vendedor.comissao := vendedor.comissao * vendedor.total_vendas;
 
-        -- Exibir os dados do vendedor no relatÛrio
+        -- Exibir os dados do vendedor no relat√≥rio
         DBMS_OUTPUT.PUT_LINE('Nome do Vendedor: ' || vendedor.nome);
         DBMS_OUTPUT.PUT_LINE('Total de Vendas: ' || vendedor.total_vendas);
-        DBMS_OUTPUT.PUT_LINE('Percentual de Comiss„o: ' || vendedor.comissao * 100 || '%');
-        DBMS_OUTPUT.PUT_LINE('Valor da Comiss„o: R$' || vendedor.valor_comissao);
+        DBMS_OUTPUT.PUT_LINE('Percentual de Comiss√£o: ' || vendedor.comissao * 100 || '%');
+        DBMS_OUTPUT.PUT_LINE('Valor da Comiss√£o: R$' || vendedor.valor_comissao);
         DBMS_OUTPUT.PUT_LINE('Total Geral de Vendas: R$' || v_total_geral_vendas);
-        DBMS_OUTPUT.PUT_LINE('Percentual de sua comiss„o relativa ao total geral das vendas: ' || vendedor.valor_comissao/v_total_geral_vendas * 100 || '%');
+        DBMS_OUTPUT.PUT_LINE('Percentual de sua comiss√£o relativa ao total geral das vendas: ' || vendedor.valor_comissao/v_total_geral_vendas * 100 || '%');
         DBMS_OUTPUT.PUT_LINE('-----------------------------------------------------------------------------------------------------------');
     END LOOP;
 
 EXCEPTION
     WHEN OTHERS THEN
-        DBMS_OUTPUT.PUT_LINE('Erro ao gerar o relatÛrio: ' || SQLERRM);
+        DBMS_OUTPUT.PUT_LINE('Erro ao gerar o relat√≥rio: ' || SQLERRM);
 END;
 
 BEGIN
