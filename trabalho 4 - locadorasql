@@ -1,0 +1,544 @@
+/*==============================================================*/
+/* DBMS name:      ORACLE Version 10g                           */
+/* Created on:     24/05/2023 19:00:00                          */
+/*==============================================================*/
+drop table CLIENTES cascade constraints;
+drop table LOCACOES cascade constraints;
+drop table ITENS_LOCACAO cascade constraints;
+drop table GENEROS cascade constraints;
+drop table PRECOS cascade constraints;
+drop table FILMES cascade constraints;
+drop table FILMES_ATOR cascade constraints;
+drop table ATORES cascade constraints;
+drop table CATEGORIAS cascade constraints;
+
+/*==============================================================*/
+/* Table: FILMES                                                */
+/*==============================================================*/
+CREATE TABLE FILMES (
+    FILME         NUMBER(6),
+    NOME          VARCHAR2(100) NOT NULL,
+    GENERO        NUMBER(3)     NOT NULL,
+    PRECO         NUMBER(4)     NOT NULL,
+    DT_COMPRA     DATE          NOT NULL,
+    HRS_DEVOLUCAO NUMBER(2)     NOT NULL,
+    CONSTRAINT PK_FILMES PRIMARY KEY (FILME)
+);
+
+/*==============================================================*/
+/* Table: CLIENTES                                              */
+/*==============================================================*/
+CREATE TABLE CLIENTES (
+    CLIENTE     NUMBER(6)      NOT NULL,
+    NOME        VARCHAR2(100)  NOT NULL,
+    ENDERECO    VARCHAR2(100)  NOT NULL,
+    FONE        VARCHAR2(20)   NOT NULL,
+    CIDADE      VARCHAR2(50)   NOT NULL,
+    CONSTRAINT PK_CLIENTES     PRIMARY KEY (CLIENTE)
+);
+
+/*==============================================================*/
+/* Table: LOCACOES                                              */
+/*==============================================================*/
+CREATE TABLE LOCACOES (
+    LOCACAO      NUMBER(6),
+    DT_LOCACAO   DATE       NOT NULL,
+    CLIENTE      NUMBER(6)  NOT NULL,
+    DT_DEVOLUCAO DATE       NOT NULL,
+    CONSTRAINT PK_LOCACOES  PRIMARY KEY (LOCACAO)
+);
+
+/*==============================================================*/
+/* Table: ITENS_LOCACAO                                         */
+/*==============================================================*/
+CREATE TABLE ITENS_LOCACAO (
+    LOCACAO  NUMBER(6)   NOT NULL,
+    FILME    NUMBER(6)   NOT NULL,
+    DESCONTO NUMBER(8,2),
+    CONSTRAINT PK_ITENS_LOCACAO PRIMARY KEY (LOCACAO, FILME)
+);
+
+/*==============================================================*/
+/* Table: GENEROS                                               */
+/*==============================================================*/
+CREATE TABLE GENEROS (
+    GENERO     NUMBER(3),
+    DESCRICAO  VARCHAR2(50) NOT NULL,
+    CONSTRAINT PK_GENEROS PRIMARY KEY (GENERO)
+);
+/*==============================================================*/
+/* Table: FILMES_ATOR                                           */
+/*==============================================================*/
+CREATE TABLE FILMES_ATOR (
+    FILME NUMBER(6),
+    ATOR  NUMBER(6),
+    CONSTRAINT PK_FILMES_ATOR PRIMARY KEY (FILME, ATOR)
+);
+
+/*==============================================================*/
+/* Table: ATORES                                                */
+/*==============================================================*/
+CREATE TABLE ATORES (
+    ATOR NUMBER(6),
+    NOME VARCHAR2(100) NOT NULL,
+    CONSTRAINT PK_ATORES PRIMARY KEY (ATOR)
+);
+/*==============================================================*/
+/* Table: CATEGORIAS                                            */
+/*==============================================================*/
+CREATE TABLE CATEGORIAS (
+    CATEGORIA NUMBER(3),
+    DESCRICAO VARCHAR2(20) NOT NULL,
+    CONSTRAINT PK_CATEGORIAS PRIMARY KEY (CATEGORIA)
+);
+/*==============================================================*/
+/* Table: PRECOS                                                */
+/*==============================================================*/
+CREATE TABLE PRECOS (
+    PRECO     NUMBER(4)   NOT NULL,
+    CATEGORIA NUMBER(3),
+    VALOR     NUMBER(8,2) NOT NULL,
+    CONSTRAINT PK_PRECOS PRIMARY KEY(PRECO)
+);
+
+/*==============================================================*/
+/* ADICIONANDO OS DADOS                                         */
+/*==============================================================*/
+REM INSERTING into CLIENTES
+INSERT INTO CLIENTES (CLIENTE, NOME, ENDERECO, FONE, CIDADE) VALUES (7, 'Antônio Silva', 'Rua das Flores, 123', '(11) 9999-1234', 'São Paulo');
+INSERT INTO CLIENTES (CLIENTE, NOME, ENDERECO, FONE, CIDADE) VALUES (3, 'Maria Santos', 'Av. das Palmeiras, 456', '(21) 9876-5678', 'Rio de Janeiro');
+INSERT INTO CLIENTES (CLIENTE, NOME, ENDERECO, FONE, CIDADE) VALUES (6, 'João Oliveira', 'Travessa das Pedras, 789', '(51) 5555-7890', 'Porto Alegre');
+INSERT INTO CLIENTES (CLIENTE, NOME, ENDERECO, FONE, CIDADE) VALUES (4, 'Ana Souza', 'R. dos Ipês, 234', '(62) 1234-5678', 'Goiânia');
+INSERT INTO CLIENTES (CLIENTE, NOME, ENDERECO, FONE, CIDADE) VALUES (5, 'Pedro Fernandes', 'Av. dos Girassóis, 567', '(85) 9876-5432', 'Fort');
+insert into CLIENTES (cliente, nome, endereco, fone, cidade) values (2, 'Nanon', '9th Floor', '404-507-3622', 'Pingshui');
+insert into CLIENTES (cliente, nome, endereco, fone, cidade) values (9, 'Iain', 'Suite 38', '532-230-4195', 'Rejoyoso');
+insert into CLIENTES (cliente, nome, endereco, fone, cidade) values (1, 'Linnet', 'Suite 78', '595-803-6808', 'Kuala Tuha');
+insert into CLIENTES (cliente, nome, endereco, fone, cidade) values (8, 'Claudia', '18th Floor', '904-164-0987', 'Jacksonville');
+insert into CLIENTES (cliente, nome, endereco, fone, cidade) values (10, 'Doroteya', 'Room 1316', '500-808-3604', 'Haixing');
+
+REM INSERTING into ATORES
+INSERT INTO ATORES (ATOR, NOME) VALUES (1, 'Pedro Silva');
+INSERT INTO ATORES (ATOR, NOME) VALUES (2, 'Mara Souza');
+INSERT INTO ATORES (ATOR, NOME) VALUES (3, 'Antônio Rodrigues');
+INSERT INTO ATORES (ATOR, NOME) VALUES (4, 'Maria Fernandes');
+INSERT INTO ATORES (ATOR, NOME) VALUES (5, 'João Oliveira');
+insert into ATORES (ator, nome) values (6, 'Fiann Dryburgh');
+insert into ATORES (ator, nome) values (7, 'Hyman Coffin');
+insert into ATORES (ator, nome) values (8, 'Andria Macon');
+insert into ATORES (ator, nome) values (9, 'Vinson Foster');
+insert into ATORES (ator, nome) values (10, 'Stanfield Boughtwood');
+
+REM INSERTING into CATEGORIAS
+INSERT INTO CATEGORIAS (CATEGORIA, DESCRICAO) VALUES (1, 'selo ouro');
+INSERT INTO CATEGORIAS (CATEGORIA, DESCRICAO) VALUES (2, 'selo prata');
+INSERT INTO CATEGORIAS (CATEGORIA, DESCRICAO) VALUES (3, 'selo ouro');
+INSERT INTO CATEGORIAS (CATEGORIA, DESCRICAO) VALUES (4, 'selo prata');
+INSERT INTO CATEGORIAS (CATEGORIA, DESCRICAO) VALUES (5, 'selo ouro');
+insert into CATEGORIAS (categoria, descricao) values (6, 'selo prata');
+insert into CATEGORIAS (categoria, descricao) values (7, '(selo ouro)');
+insert into CATEGORIAS (categoria, descricao) values (8, 'selo prata');
+insert into CATEGORIAS (categoria, descricao) values (9, 'selo ouro');
+insert into CATEGORIAS (categoria, descricao) values (10, 'selo prata');
+
+REM INSERTING into FILMES
+INSERT INTO FILMES (FILME, NOME, GENERO, PRECO, DT_COMPRA, HRS_DEVOLUCAO) VALUES (1, 'Aventuras na Selva', 1, 1, '15/01/2022', 48);
+INSERT INTO FILMES (FILME, NOME, GENERO, PRECO, DT_COMPRA, HRS_DEVOLUCAO) VALUES (2, 'Noite de Terror', 2, 10, '05/06/2022', 24);
+INSERT INTO FILMES (FILME, NOME, GENERO, PRECO, DT_COMPRA, HRS_DEVOLUCAO) VALUES (3, 'O Tesouro Perdido', 3, 9, '20/03/2022', 72);
+INSERT INTO FILMES (FILME, NOME, GENERO, PRECO, DT_COMPRA, HRS_DEVOLUCAO) VALUES (4, 'Amor em Paris', 4, 2, '10/08/2022', 48);
+INSERT INTO FILMES (FILME, NOME, GENERO, PRECO, DT_COMPRA, HRS_DEVOLUCAO) VALUES (5, 'Desbravadores do Espaço', 5, 4, '30/09/2022', 72);
+insert into FILMES (FILME, NOME, GENERO, PRECO, DT_COMPRA, HRS_DEVOLUCAO) values (6, 'Late Autumn (Man-choo)', 6, 3, '7/3/2023', 21);
+insert into FILMES (FILME, NOME, GENERO, PRECO, DT_COMPRA, HRS_DEVOLUCAO) values (7, 'City Zero', 7, 6, '21/4/2022', 8);
+insert into FILMES (FILME, NOME, GENERO, PRECO, DT_COMPRA, HRS_DEVOLUCAO) values (8, 'Crows Zero (Kurôzu zero)', 8, 7, '1/1/2023', 8);
+insert into FILMES (FILME, NOME, GENERO, PRECO, DT_COMPRA, HRS_DEVOLUCAO) values (9, 'Venus Wars (Venus Senki)', 9, 4, '22/10/2022', 11);
+insert into FILMES (FILME, NOME, GENERO, PRECO, DT_COMPRA, HRS_DEVOLUCAO) values (10, 'American Gothic', 10, 1, '1/1/2023', 14);
+
+REM INSERTING into FILMES_ATOR
+INSERT INTO FILMES_ATOR (FILME, ATOR) VALUES (1, 1);
+INSERT INTO FILMES_ATOR (FILME, ATOR) VALUES (2, 2);
+INSERT INTO FILMES_ATOR (FILME, ATOR) VALUES (3, 3);
+INSERT INTO FILMES_ATOR (FILME, ATOR) VALUES (4, 4);
+INSERT INTO FILMES_ATOR (FILME, ATOR) VALUES (5, 5);
+insert into FILMES_ATOR (FILME, ATOR) values (6, 2);
+insert into FILMES_ATOR (FILME, ATOR) values (7, 1);
+insert into FILMES_ATOR (FILME, ATOR) values (8, 5);
+insert into FILMES_ATOR (FILME, ATOR) values (9, 2);
+insert into FILMES_ATOR (FILME, ATOR) values (10, 7);
+
+REM INSERTING into PRECOS
+INSERT INTO PRECOS (PRECO, CATEGORIA, VALOR) VALUES (1, 1, 12.99);
+INSERT INTO PRECOS (PRECO, CATEGORIA, VALOR) VALUES (2, 2, 15.50);
+INSERT INTO PRECOS (PRECO, CATEGORIA, VALOR) VALUES (3, 1, 10.25);
+INSERT INTO PRECOS (PRECO, CATEGORIA, VALOR) VALUES (4, 3, 18.75);
+INSERT INTO PRECOS (PRECO, CATEGORIA, VALOR) VALUES (5, 2, 22.99);
+insert into PRECOS (PRECO, CATEGORIA, VALOR) values (6, 6, 20.54);
+insert into PRECOS (PRECO, CATEGORIA, VALOR) values (7, 2, 32.9);
+insert into PRECOS (PRECO, CATEGORIA, VALOR) values (8, 4, 46.54);
+insert into PRECOS (PRECO, CATEGORIA, VALOR) values (9, 9, 9.89);
+insert into PRECOS (PRECO, CATEGORIA, VALOR) values (10, 5, 32.39);
+
+REM INSERTING into GENEROS
+INSERT INTO GENEROS (GENERO, DESCRICAO) VALUES (1, 'Ação');
+INSERT INTO GENEROS (GENERO, DESCRICAO) VALUES (2, 'Comédia');
+INSERT INTO GENEROS (GENERO, DESCRICAO) VALUES (3, 'Drama');
+INSERT INTO GENEROS (GENERO, DESCRICAO) VALUES (4, 'Ficção Científica');
+INSERT INTO GENEROS (GENERO, DESCRICAO) VALUES (5, 'Romance');
+insert into GENEROS (GENERO, DESCRICAO) values (6, 'Drama');
+insert into GENEROS (GENERO, DESCRICAO) values (7, 'Sci-Fi');
+insert into GENEROS (GENERO, DESCRICAO) values (8, 'Drama');
+insert into GENEROS (GENERO, DESCRICAO) values (9, 'Drama');
+insert into GENEROS (GENERO, DESCRICAO) values (10,'Crime|Drama');
+
+REM INSERTING into ITENS_LOCACAO
+INSERT INTO ITENS_LOCACAO (LOCACAO, FILME, DESCONTO) VALUES (1, 1, 3.50);
+INSERT INTO ITENS_LOCACAO (LOCACAO, FILME, DESCONTO) VALUES (2, 5, NULL);
+INSERT INTO ITENS_LOCACAO (LOCACAO, FILME, DESCONTO) VALUES (3, 1, 1.25);
+INSERT INTO ITENS_LOCACAO (LOCACAO, FILME, DESCONTO) VALUES (4, 4, NULL);
+INSERT INTO ITENS_LOCACAO (LOCACAO, FILME, DESCONTO) VALUES (5, 3, 2.00);
+insert into ITENS_LOCACAO (LOCACAO, FILME, DESCONTO) values (6, 2, 2.63);
+insert into ITENS_LOCACAO (LOCACAO, FILME, DESCONTO) values (7, 1, 3.27);
+insert into ITENS_LOCACAO (LOCACAO, FILME, DESCONTO) values (8, 3, 2.52);
+insert into ITENS_LOCACAO (LOCACAO, FILME, DESCONTO) values (9, 4, 4.03);
+insert into ITENS_LOCACAO (LOCACAO, FILME, DESCONTO) values (10, 1, 3.44);
+insert into ITENS_LOCACAO (LOCACAO, FILME, DESCONTO) values (11, 1, 14.64);
+insert into ITENS_LOCACAO (LOCACAO, FILME, DESCONTO) values (12, 4, 56.44);
+insert into ITENS_LOCACAO (LOCACAO, FILME, DESCONTO) values (13, 3, 56.44);
+insert into ITENS_LOCACAO (LOCACAO, FILME, DESCONTO) values (14, 6, 56.44);
+insert into ITENS_LOCACAO (LOCACAO, FILME, DESCONTO) values (15, 3, 56.44);
+insert into ITENS_LOCACAO (LOCACAO, FILME, DESCONTO) values (16, 6, 56.44);
+insert into ITENS_LOCACAO (LOCACAO, FILME, DESCONTO) values (17, 2, 56.44);
+
+
+REM INSERTING into LOCACOES
+INSERT INTO LOCACOES (LOCACAO, DT_LOCACAO, CLIENTE, DT_DEVOLUCAO) VALUES (1, '28/03/2023', 5, '30/03/2023');
+INSERT INTO LOCACOES (LOCACAO, DT_LOCACAO, CLIENTE, DT_DEVOLUCAO) VALUES (2, '29/03/2023', 7, '02/04/2023');
+INSERT INTO LOCACOES (LOCACAO, DT_LOCACAO, CLIENTE, DT_DEVOLUCAO) VALUES (3, '30/03/2023', 5, '01/04/2023');
+INSERT INTO LOCACOES (LOCACAO, DT_LOCACAO, CLIENTE, DT_DEVOLUCAO) VALUES (4, '31/03/2023', 4, '03/04/2023');
+INSERT INTO LOCACOES (LOCACAO, DT_LOCACAO, CLIENTE, DT_DEVOLUCAO) VALUES (5, '01/04/2023', 9, '04/04/2023');
+insert into LOCACOES (LOCACAO, DT_LOCACAO, CLIENTE, DT_DEVOLUCAO) values (6, '20/3/2020', 7, '1/9/2022');
+insert into LOCACOES (LOCACAO, DT_LOCACAO, CLIENTE, DT_DEVOLUCAO) values (7, '3/7/2020', 7, '18/9/2022');
+insert into LOCACOES (LOCACAO, DT_LOCACAO, CLIENTE, DT_DEVOLUCAO) values (8, '29/1/2021', 6, '13/5/2023');
+insert into LOCACOES (LOCACAO, DT_LOCACAO, CLIENTE, DT_DEVOLUCAO) values (9, '30/4/2020', 4, '21/9/2022');
+insert into LOCACOES (LOCACAO, DT_LOCACAO, CLIENTE, DT_DEVOLUCAO) values (10, '14/3/2021', 3, '3/12/2023');
+INSERT INTO LOCACOES (LOCACAO, DT_LOCACAO, CLIENTE, DT_DEVOLUCAO) VALUES (11, '28/03/2007', 5, '30/03/2007');
+INSERT INTO LOCACOES (LOCACAO, DT_LOCACAO, CLIENTE, DT_DEVOLUCAO) VALUES (12, '28/03/2007', 5, '30/03/2007');
+INSERT INTO LOCACOES (LOCACAO, DT_LOCACAO, CLIENTE, DT_DEVOLUCAO) VALUES (13, '28/03/2006', 5, '30/03/2006');
+INSERT INTO LOCACOES (LOCACAO, DT_LOCACAO, CLIENTE, DT_DEVOLUCAO) VALUES (14, '28/03/2006', 5, '30/03/2006');
+INSERT INTO LOCACOES (LOCACAO, DT_LOCACAO, CLIENTE, DT_DEVOLUCAO) VALUES (15, '28/03/2006', 9, '30/03/2006');
+
+/*==============================================================*/
+/* ALTERANDO AS TABELAS ADICIONANDO AS RESTRIÇÕES              */
+/*==============================================================*/
+ALTER TABLE PRECOS
+ADD CONSTRAINT FK_CATEGORIA_PRECOS  FOREIGN KEY (CATEGORIA)
+REFERENCES CATEGORIAS (CATEGORIA);
+
+ALTER TABLE ITENS_LOCACAO
+ADD CONSTRAINT FK_LOCACAO_ITENS_LOCACAO FOREIGN KEY (LOCACAO)
+REFERENCES LOCACOES (LOCACAO);
+
+ALTER TABLE ITENS_LOCACAO
+ADD CONSTRAINT FK_FILME_ITENS_LOCACAO   FOREIGN KEY (FILME)   
+REFERENCES FILMES   (FILME);
+
+ALTER TABLE FILMES
+ADD CONSTRAINT FK_PRECOS_FILMES FOREIGN KEY (FILME)
+REFERENCES PRECOS (PRECO);
+
+ALTER TABLE FILMES
+ADD CONSTRAINT FK_GENERO_FILMES FOREIGN KEY (GENERO)
+REFERENCES GENEROS (GENERO);
+
+ALTER TABLE LOCACOES
+ADD CONSTRAINT FK_CLIENTE_LOCACOES FOREIGN KEY (CLIENTE)
+REFERENCES CLIENTES (CLIENTE);
+
+ALTER TABLE FILMES_ATOR
+ADD CONSTRAINT FK_FILME_FILMES_ATOR FOREIGN KEY (FILME)
+REFERENCES FILMES(FILME);
+
+ALTER TABLE FILMES_ATOR
+ADD CONSTRAINT FK_ATOR_FILMES_ATOR FOREIGN KEY (ATOR)
+REFERENCES ATORES(ATOR);
+
+/*==============================================================*/
+/* ALTERANDO AS TABELAS RETIRANDO RESTRICOES                    */
+/*==============================================================*/
+/*
+alter table PRECOS
+drop constraint FK_CATEGORIA_PRECOS;
+
+alter table ITENS_LOCACAO
+drop constraint FK_LOCACAO_ITENS_LOCACAO;
+
+alter table ITENS_LOCACAO
+drop constraint FK_FILME_ITENS_LOCACAO;
+
+alter table FILMES
+drop constraint FK_PRECOS_FILMES;
+
+alter table FILMES
+drop constraint FK_GENERO_FILMES;
+
+alter table LOCACOES
+drop constraint FK_CLIENTE_LOCACOES;
+
+alter table FILMES_ATOR
+drop constraint FK_FILME_FILMES_ATOR;
+
+alter table FILMES_ATOR
+drop constraint FK_ATOR_FILMES_ATOR;
+*/
+
+--EXERCÍCIO 1 
+/*
+Criar uma procedure que quando for informado o código do cliente ela retorne o valor pago por ele pelas locações realizadas no 
+período de janeiro de 2006 a dezembro de 2006. Somente devem ser retornadas informações para os clientes cadastrados, caso o 
+cliente não exista na base de dados deve ser informado ao usuário, também deve ser informado ao usuário caso o período informado 
+não exista locações de fitas por parte do cliente.
+*/
+create or replace NONEDITIONABLE PROCEDURE OBTENHA_VALOR_PAGO (
+    p_codigo_cliente IN NUMBER,
+    p_valor_pago OUT NUMBER
+)
+IS
+    v_data_inicio DATE := TO_DATE('01-01-2006', 'DD-MM-YYYY');
+    v_data_fim DATE := TO_DATE('31-12-2006', 'DD-MM-YYYY');
+    v_cliente_existe NUMBER;
+    v_periodo_valido NUMBER;
+BEGIN
+    -- Verificar se o cliente existe
+    SELECT COUNT(*) INTO v_cliente_existe
+    FROM CLIENTES
+    WHERE CLIENTE = p_codigo_cliente;
+
+    IF v_cliente_existe = 0 THEN
+        DBMS_OUTPUT.PUT_LINE('Cliente não encontrado.');
+        RETURN;
+    END IF;
+
+    -- Verificar se existem locações no período informado
+    SELECT COUNT(*) INTO v_periodo_valido
+    FROM LOCACOES
+    WHERE CLIENTE = p_codigo_cliente
+    AND DT_LOCACAO >= v_data_inicio
+    AND DT_LOCACAO <= v_data_fim;
+
+    IF v_periodo_valido = 0 THEN
+        DBMS_OUTPUT.PUT_LINE('Não há locações para o cliente no período informado.');
+        RETURN;
+    END IF;
+
+    -- Calcular o valor total pago pelo cliente no período
+    SELECT SUM(VALOR) INTO p_valor_pago
+    FROM LOCACOES l
+    JOIN ITENS_LOCACAO il ON l.LOCACAO = il.LOCACAO
+    JOIN PRECOS p ON il.FILME = p.PRECO
+    WHERE l.CLIENTE = p_codigo_cliente
+    AND l.DT_LOCACAO >= v_data_inicio
+    AND l.DT_LOCACAO <= v_data_fim;
+
+    -- Exibir o valor pago pelo cliente
+    DBMS_OUTPUT.PUT_LINE('Valor pago pelo cliente: ' || p_valor_pago);
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Erro ao processar a consulta: ' || SQLERRM);
+END;
+--EXERCICIO 2
+/*
+Criar uma procedure que retorne o valor total de fitas compradas em um determinado intervalo de data. Caso o intervalo 
+de data não exista nenhuma compra, deve ser retornada a mensagem “Neste período não foram adquiridas novas fitas para a locadora”.
+*/
+create or replace NONEDITIONABLE PROCEDURE OBTENHA_VALOR_TOTAL_COMPRAS (
+    p_data_inicio IN DATE,
+    p_data_fim    IN DATE,
+    p_valor_total OUT NUMBER
+)
+IS
+BEGIN
+    -- Verificar se existem compras no intervalo de datas informado
+    SELECT NVL(SUM(PRECO), 0) INTO p_valor_total
+    FROM FILMES
+    WHERE DT_COMPRA >= p_data_inicio
+    AND DT_COMPRA <= p_data_fim;
+
+    IF p_valor_total = 0 THEN
+        DBMS_OUTPUT.PUT_LINE('Neste período não foram adquiridas novas fitas para a locadora.');
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('Valor total de fitas compradas no período: ' || p_valor_total);
+    END IF;
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Erro ao processar a consulta: ' || SQLERRM);
+END;
+
+--EXERCICIO 3
+/*
+Criar uma procedure que permita localizar o cliente que mais efetuou locações no ano de 2007, bem como o valor total pago por estas locações.
+*/
+create or replace NONEDITIONABLE PROCEDURE LOCALIZA_CLIENTE_MAIS_LOCACOES_2007 (
+    p_codigo_cliente OUT NUMBER,
+    p_nome_cliente   OUT VARCHAR2,
+    p_valor_total_locacoes OUT NUMBER
+)
+IS
+BEGIN
+    -- Localizar o cliente que mais efetuou locações em 2007
+    SELECT l.CLIENTE, c.NOME, COUNT(*) AS TOTAL_LOCACOES
+    INTO p_codigo_cliente, p_nome_cliente, p_valor_total_locacoes
+    FROM LOCACOES l
+    JOIN CLIENTES c ON l.CLIENTE = c.CLIENTE
+    WHERE EXTRACT(YEAR FROM l.DT_LOCACAO) = 2007
+    GROUP BY l.CLIENTE, c.NOME
+    HAVING COUNT(*) = (
+        SELECT MAX(TOTAL_LOCACOES)
+        FROM (
+            SELECT COUNT(*) AS TOTAL_LOCACOES
+            FROM LOCACOES
+            WHERE EXTRACT(YEAR FROM DT_LOCACAO) = 2007
+            GROUP BY CLIENTE
+        )
+    );
+
+    -- Verificar se há resultados
+    IF p_codigo_cliente IS NULL THEN
+        DBMS_OUTPUT.PUT_LINE('Nenhum cliente encontrado que efetuou locações em 2007.');
+        RETURN;
+    END IF;
+
+    -- Calcular o valor total pago pelo cliente
+    SELECT SUM(p.VALOR) INTO p_valor_total_locacoes
+    FROM LOCACOES l
+    JOIN ITENS_LOCACAO il ON l.LOCACAO = il.LOCACAO
+    JOIN PRECOS p ON il.FILME = p.PRECO
+    WHERE l.CLIENTE = p_codigo_cliente
+    AND EXTRACT(YEAR FROM l.DT_LOCACAO) = 2007;
+
+    -- Exibir o cliente e o valor total pago por ele
+    DBMS_OUTPUT.PUT_LINE('Cliente com mais locações em 2007: ' || p_nome_cliente);
+    DBMS_OUTPUT.PUT_LINE('Valor total pago por locações: ' || p_valor_total_locacoes);
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Erro ao processar a consulta: ' || SQLERRM);
+END;
+--EXERCICIO 4
+/*
+Criar uma procedure que receba os dados de um ATOR, de um FILME e efetue a inclusão do mesmo no banco de dados. 
+Também deve ser relacionado o ator ao filme na tabela FILMES_ATOR.
+*/
+create or replace NONEDITIONABLE PROCEDURE INSERIR_ATOR_FILME (
+    nome_ator    IN ATORES.NOME%TYPE,
+    nome_filme   IN FILMES.NOME%TYPE,
+    genero_filme IN FILMES.GENERO%TYPE,
+    preco_filme  IN FILMES.PRECO%TYPE,
+    data_filme   IN FILMES.DT_COMPRA%TYPE,
+    hrs_filme    IN FILMES.HRS_DEVOLUCAO%TYPE
+    
+)
+IS
+    qtd_filmes FILMES.FILME%TYPE;
+    qtd_atores ATORES.ATOR%TYPE;
+    ator_id  ATORES.ATOR%TYPE;
+    filme_id FILMES.FILME%TYPE;
+    
+BEGIN
+    SELECT COUNT(*) INTO qtd_atores
+    FROM ATORES;
+    
+    SELECT COUNT(*) INTO qtd_filmes
+    FROM FILMES;
+
+    -- Inserir o ator na tabela ATORES
+    INSERT INTO ATORES (ATOR, NOME)
+    VALUES (qtd_atores + 1, nome_ator)
+    RETURNING ATOR INTO ator_id;
+
+    -- Inserir o filme na tabela FILMES
+    INSERT INTO FILMES (FILME, NOME, GENERO, PRECO, DT_COMPRA, HRS_DEVOLUCAO)
+    VALUES (qtd_filmes + 1, nome_filme, genero_filme, preco_filme, data_filme, hrs_filme)
+    RETURNING FILME INTO filme_id;
+
+    -- Relacionar o ator ao filme na tabela FILMES_ATOR
+    INSERT INTO FILMES_ATOR (FILME, ATOR)
+    VALUES (filme_id, ator_id);
+
+    -- Exibir mensagem de sucesso
+    DBMS_OUTPUT.PUT_LINE('Ator e filme inseridos com sucesso!');
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Erro ao inserir ator e filme: ' || SQLERRM);
+END;
+
+
+--EXERCICIO 5
+/*
+O Gerente Geral empresa em que você trabalha solicitou ao DBA um relatório dos vendedores que tenham comissão acima de R$1.000,00 independente 
+do percentual de comissão que cada vendedor recebe. Esta solicitação foi necessária visto que o sistema existente atualmente não contempla este 
+tipo de relatório gerencial, e para complicar ainda mais, o gerente disse que está indo em 10 minutos para uma reunião com o Diretor Presidente 
+da empresa e o resultado bem sucedido da reunião vai depender de você. Após o susto, você decide implementar uma SP para resolver o problema. Dentro 
+das possibilidades existentes para a criação da SP, implemente a solução do problema apresentado utilizando uma tabela de vendedores na qual deve 
+conter os seguintes atributos: VENDEDORES = {vendedor, nome, comissão, total_vendas}. Alimente a tabela com as informações que julgar necessário. 
+O relatório gerado deverá possuir o nome do vendedor, o total de suas vendas, o percentual de sua comissão, o valor que ele irá receber de comissão, 
+o total geral das vendas de todos os vendedores, e o percentual de sua comissão relativa ao total geral das vendas.
+*/
+DROP TABLE VENDEDORES cascade constraints;
+
+CREATE TABLE VENDEDORES (
+    vendedor      NUMBER(6)     PRIMARY KEY,
+    nome          VARCHAR2(100) NOT NULL,
+    comissao      NUMBER(8,2)   NOT NULL,
+    total_vendas  NUMBER(15,2)  NOT NULL
+);
+
+INSERT INTO VENDEDORES (vendedor, nome, comissao, total_vendas)
+VALUES (1, 'João', 0.25, 2000.56);
+
+INSERT INTO VENDEDORES (vendedor, nome, comissao, total_vendas)
+VALUES (2, 'Maria', 0.25, 3500.67);
+
+INSERT INTO VENDEDORES (vendedor, nome, comissao, total_vendas)
+VALUES (3, 'Pedro', 0.25, 5000.65);
+
+INSERT INTO VENDEDORES (vendedor, nome, comissao, total_vendas)
+VALUES (4, 'Murilo', 0.25, 5000.45);
+
+INSERT INTO VENDEDORES (vendedor, nome, comissao, total_vendas)
+VALUES (5, 'Paula', 0.25, 10000.56);
+
+create or replace NONEDITIONABLE PROCEDURE RELATORIO_COMISSOES
+IS
+    v_total_geral_vendas NUMBER(20,2);
+    v_percentual_comissao_geral NUMBER(20,2);
+    total_vendas NUMBER(20,2);
+BEGIN
+    -- Calcular o total geral de vendas de todos os vendedores
+    SELECT SUM(total_vendas) INTO v_total_geral_vendas FROM VENDEDORES;
+
+    -- Gerar o relatório dos vendedores com comissão acima de R$1.000,00
+    FOR vendedor IN (SELECT nome, total_vendas, comissao, (comissao * total_vendas) AS valor_comissao
+                         FROM VENDEDORES
+                         WHERE comissao * total_vendas > 1000)
+    LOOP
+        -- Calcular o valor da comissão do vendedor
+        --vendedor.comissao := vendedor.comissao * vendedor.total_vendas;
+
+        -- Exibir os dados do vendedor no relatório
+        DBMS_OUTPUT.PUT_LINE('Nome do Vendedor: ' || vendedor.nome);
+        DBMS_OUTPUT.PUT_LINE('Total de Vendas: ' || vendedor.total_vendas);
+        DBMS_OUTPUT.PUT_LINE('Percentual de Comissão: ' || vendedor.comissao * 100 || '%');
+        DBMS_OUTPUT.PUT_LINE('Valor da Comissão: R$' || vendedor.valor_comissao);
+        DBMS_OUTPUT.PUT_LINE('Total Geral de Vendas: R$' || v_total_geral_vendas);
+        DBMS_OUTPUT.PUT_LINE('Percentual de sua comissão relativa ao total geral das vendas: ' || vendedor.valor_comissao/v_total_geral_vendas * 100 || '%');
+        DBMS_OUTPUT.PUT_LINE('-----------------------------------------------------------------------------------------------------------');
+    END LOOP;
+
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Erro ao gerar o relatório: ' || SQLERRM);
+END;
+
+BEGIN
+    RELATORIO_COMISSOES;
+END;
+
+/* FIM DAS CONSULTAS SQL */
+COMMIT;
